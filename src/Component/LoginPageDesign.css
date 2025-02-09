@@ -1,30 +1,19 @@
-
-.login-container {
-    display: flex;
-    height: 100vh;
-}
-
-/* Body styling with animated gradient background */
+/* General styling */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: linear-gradient(135deg, #ff7eb3, #ff758c, #6a11cb, #2575fc);
-    background-size: 400% 400%;
-    animation: gradientShift 5s ease infinite;
+    color: #333; /* Dark text for better readability */
+    background-color: #f7f7f7;  /* Light background color for the page */
 }
 
-/* Gradient animation */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Full page container */
+.login-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1); /* Add soft shadow around the container */
+    border-radius: 15px; /* Slight rounding of corners for modern look */
 }
 
 /* Left-side image section */
@@ -32,15 +21,14 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
     background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px 0 0 15px; /* Add border radius on left side */
 }
 
 .image-side img {
     max-width: 80%;
     height: auto;
     border-radius: 15px;
-    
 }
 
 /* Right-side form section */
@@ -51,18 +39,18 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly opaque white for a fresh look */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
     margin: 20px;
 }
 
 /* Form heading */
 .form-side h2 {
     margin-bottom: 30px;
-    font-size: 32px;
-    color: #fddb92;
-    text-shadow: 0 4px 10px rgba(253, 219, 146, 0.7);
+    font-size: 36px;
+    color: #ff6f61; /* Vibrant, attractive color */
+    text-shadow: 0 4px 12px rgba(255, 111, 97, 0.6); /* Soft glowing effect */
 }
 
 /* Form fields */
@@ -75,61 +63,65 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 210, 255, 0.6);
+    color: #333;
+    text-shadow: 0 2px 4px rgba(0, 210, 255, 0.3); /* Light blue text shadow for emphasis */
 }
 
 .form-group input {
     width: 100%;
     padding: 12px;
-    border: none;
+    border: 2px solid #ddd; /* Slight border for input fields */
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.9); /* Clean background for input fields */
+    color: #333;
     font-size: 16px;
     outline: none;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 .form-group input:hover,
 .form-group input:focus {
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    color: black;
-}
-
-.form-group input::placeholder {
-    color: #ccc;
-    font-style: italic;
+    background: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow when focusing */
+    color: #333;
+    border-color: #ff6f61; /* Highlight border on focus */
 }
 
 /* Button styling */
 button {
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #fddb92, #d1fdff);
-    color: #000;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #4e92cc, #6d88ea); /* Fresh blue gradient */
+    color: #fff;
     font-size: 18px;
     font-weight: bold;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 10px 20px rgba(253, 219, 146, 0.6);
-    margin-left: 60px;
-    margin-top: 5px;
+    box-shadow: 0 10px 20px rgba(77, 144, 204, 0.4); /* Soft shadow for 3D effect */
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #d1fdff, #fddb92);
-    transform: scale(1.1);
-    box-shadow: 0 15px 30px rgba(253, 219, 146, 0.8);
+    background: linear-gradient(135deg, #6d88ea, #4e92cc); /* Inverse the gradient for hover effect */
+    transform: scale(1.05); /* Slight scale effect for interaction */
+    box-shadow: 0 15px 30px rgba(77, 144, 204, 0.6); /* Increase shadow on hover */
+}
+
+/* Focused button for accessibility */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(77, 144, 204, 0.6); /* Focus ring with the same color as the button */
 }
 
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
     .login-container {
         flex-direction: column;
+        height: auto;
+        margin: 10px;
     }
 
     .image-side {
@@ -137,25 +129,35 @@ button:hover {
     }
 
     .form-side {
-        height: 60%;
+        height: auto;
         margin: 0;
         border-radius: 0;
     }
 }
 
-.twopage{
-    display: flex;
-    margin-top: 50px;
+/* Error message styling */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
 }
-.registation{
-    font-size: 20px;
-    font-weight: 900;
+
+/* Footer links */
+.footer-links {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-links a {
+    color: #ff6f61;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
     text-decoration: underline;
-    gap: 5px;
-    display: flex;
-}
-.or{
-    text-decoration: none;
-    font-size: 40px;
-    text-decoration: none;
+    color: #d1fdff;
 }
